@@ -4,9 +4,9 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item href="#">Home</a>
+      <a mat-list-item [routerLink]="['/counter']" [routerLinkActive]="['link-active']">Counter</a>
+      <a mat-list-item [routerLink]="['/fetch-data']" [routerLinkActive]="['link-active']">Fetch Data</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
