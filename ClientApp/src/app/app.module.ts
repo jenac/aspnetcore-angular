@@ -20,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { DashComponent } from './dash/dash.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatListModule } from '@angular/material/list';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    SideNavComponent
+    SideNavComponent,
+    DashComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,6 +39,7 @@ import { MatListModule } from '@angular/material/list';
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'dash', component: DashComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
     ]),
