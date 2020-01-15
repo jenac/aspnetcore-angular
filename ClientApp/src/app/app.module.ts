@@ -22,6 +22,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { DashComponent } from './dash/dash.component';
 
+import {CardModule} from 'primeng/card';
+import {ToolbarModule} from 'primeng/toolbar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,10 @@ import { DashComponent } from './dash/dash.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+
+    CardModule,
+    ToolbarModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
