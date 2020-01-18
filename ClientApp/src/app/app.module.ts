@@ -28,10 +28,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', pathMatch: 'full', redirectTo: 'member' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'example', loadChildren: () => import('./example/example.module').then(m => m.ExampleModule) },
+      { path: 'member', loadChildren: () => import('./member/member.module').then(m => m.MemberModule) },
     ]),
     BrowserAnimationsModule
   ],

@@ -1,16 +1,33 @@
-<ul class="navbar-nav" *ngIf="isAuthenticated | async">
-    <li class="nav-item">
-        <a  class="nav-link text-dark" [routerLink]='["/authentication/profile"]' title="Manage">Hello {{ userName | async }}</a>
-    </li>
-    <li class="nav-item">
-        <a  class="nav-link text-dark" [routerLink]='["/authentication/logout"]' [state]='{ local: true }' title="Logout">Logout</a>
-    </li>
-</ul>
-<ul class="navbar-nav" *ngIf="!(isAuthenticated | async)">
-  <li class="nav-item">
+<!-- <span *ngIf="!(isAuthenticated | async)">
         <a class="nav-link text-dark" [routerLink]='["/authentication/register"]'>Register</a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link text-dark" [routerLink]='["/authentication/login"]'>Login</a>
-    </li>
-</ul>
+</span> -->
+<span *ngIf="isAuthenticated | async">
+    <a aria-label="Profile button" [routerLink]='["/authentication/profile"]' title="Hello {{ userName | async }}" class="button-link">
+        <button mat-button>
+            <mat-icon>person</mat-icon>
+            Profile
+        </button>
+    </a>
+    <a aria-label="Logout link" [routerLink]='["/authentication/logout"]' [state]='{ local: true }' title="Logout" class="button-link">
+        <button mat-button>
+            <mat-icon>exit_to_app</mat-icon>
+            Logout
+        </button>
+    </a>
+</span>
+
+<span *ngIf="!(isAuthenticated | async)">
+    <a aria-label="Register link" [routerLink]='["/authentication/register"]' title="Register" class="button-link">
+        <button mat-button>
+            <mat-icon>how_to_reg</mat-icon>
+            Register
+        </button>
+    </a>
+    <a aria-label="Login link" [routerLink]='["/authentication/login"]' title="Login" class="button-link">
+        <button mat-button>
+            <mat-icon>lock</mat-icon>
+            Login
+        </button>
+    </a>
+</span>

@@ -7,10 +7,18 @@ import { RouterModule } from '@angular/router';
 import { ApplicationPaths } from './api-authorization.constants';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
+
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
     RouterModule.forChild(
       [
         { path: ApplicationPaths.Register, component: LoginComponent },
