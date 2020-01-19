@@ -40,6 +40,7 @@ const routes: Routes = [
     MatTableModule,
     MatPaginatorModule,
     MatSortModule
-  ]
+  ],
+ 
 })
 export class ExampleModule { }
