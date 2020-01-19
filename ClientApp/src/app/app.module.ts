@@ -28,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'member' },
+      { path: '', pathMatch: 'full', redirectTo: 'example' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'example', loadChildren: () => import('./example/example.module').then(m => m.ExampleModule) },
