@@ -10,14 +10,23 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
+import { WeatherDataComponent } from './weather-data/weather-data.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 const routes: Routes = [
-  { path: '', component: ExampleComponent, canActivate: [AuthorizeGuard]  }
+  {
+    path: '', component: ExampleComponent, canActivate: [AuthorizeGuard], children: [
+      { path: 'weather-data', component: WeatherDataComponent },
+
+    ]
+  },
 ];
 
 @NgModule({
-  declarations: [ExampleComponent],
+  declarations: [ExampleComponent, WeatherDataComponent],
   imports: [
     CommonModule,
     ApiAuthorizationModule,
@@ -27,7 +36,10 @@ const routes: Routes = [
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class ExampleModule { }
