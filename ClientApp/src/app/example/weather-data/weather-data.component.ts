@@ -16,7 +16,7 @@ export class WeatherDataComponent implements AfterViewInit, OnInit {
   dataSource: WeatherDataDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['date', 'temperatureC', 'temperatureF', 'summary'];
 
   ngOnInit() {
     this.dataSource = new WeatherDataDataSource();

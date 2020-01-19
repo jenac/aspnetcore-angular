@@ -1,15 +1,27 @@
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" matSort aria-label="Elements">
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell *matCellDef="let row">{{row.date}}</td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    <!-- TemperatureC Column -->
+    <ng-container matColumnDef="temperatureC">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>C</th>
+      <td mat-cell *matCellDef="let row">{{row.temperatureC}}</td>
+    </ng-container>
+
+    <!-- TemperatureF Column -->
+    <ng-container matColumnDef="temperatureF">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>F</th>
+      <td mat-cell *matCellDef="let row">{{row.temperatureF}}</td>
+    </ng-container>
+
+    <!-- Summary Column -->
+    <ng-container matColumnDef="summary">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Summary</th>
+      <td mat-cell *matCellDef="let row">{{row.summary}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -19,7 +31,7 @@
   <mat-paginator #paginator
       [length]="dataSource?.data.length"
       [pageIndex]="0"
-      [pageSize]="50"
-      [pageSizeOptions]="[25, 50, 100, 250]">
+      [pageSize]="10"
+      [pageSizeOptions]="[10, 25, 50, 100, 250]">
   </mat-paginator>
 </div>
